@@ -18,7 +18,14 @@ import { useThemeContext } from "./ThemeContext";
 
 const Navbar = () => {
   const { darkMode, toggleTheme } = useThemeContext();
-  const navItems = ["Home", "About", "Education","Projects", "Skills", "Contact"];
+  const navItems = [
+    "Home",
+    "About",
+    "Education",
+    "Projects",
+    "Skills",
+    "Contact",
+  ];
   const [scrolled, setScrolled] = useState(false);
   const [hoveredItem, setHoveredItem] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -196,7 +203,9 @@ const Navbar = () => {
         PaperProps={{
           sx: {
             width: "250px",
-            backgroundColor: darkMode ? "rgba(0, 0, 0, 0.9)" : "rgba(255, 255, 255, 0.9)",
+            backgroundColor: darkMode
+              ? "rgba(0, 0, 0, 0.9)"
+              : "rgba(255, 255, 255, 0.9)",
             backdropFilter: "blur(10px)",
           },
         }}

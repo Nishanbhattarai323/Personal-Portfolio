@@ -82,7 +82,7 @@ export default function Skills() {
       </Typography>
       <Grid container spacing={4} justifyContent="center">
         {skillsData.map((category) => (
-          <Grid item xs={12} sm={6} md={8} key={category.category}>
+          <Grid item xs={12} sm={6} md={4} key={category.category}>
             <Card sx={{ height: "100%" }}>
               <CardHeader title={category.category} sx={{ textAlign: "center" }} />
               <CardContent>

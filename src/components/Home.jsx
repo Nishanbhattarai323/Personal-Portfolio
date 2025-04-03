@@ -144,7 +144,9 @@ export default function Home() {
             >
               <span
                 style={{
-                  background: `linear-gradient(to right, ${rainbowColors.join(", ")})`,
+                  background: `linear-gradient(to right, ${rainbowColors.join(
+                    ", "
+                  )})`,
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   animation: "rainbow 8s linear infinite",
@@ -216,7 +218,44 @@ export default function Home() {
           </Box>
         </Box>
       </Container>
+
+      {/* Scroll Down Arrow */}
+      <Box
+        sx={{
+          position: "absolute",
+          bottom: "20px",
+          left: "50%",
+          transform: "translateX(-50%)",
+          cursor: "pointer",
+          animation: "bounce 2s infinite",
+        }}
+      >
+        <Link to="about" smooth={true} duration={800}>
+          <ArrowDown
+            size={40}
+            style={{
+              color: rainbowColors[colorIndex],
+              transition: "color 0.3s ease-in-out",
+            }}
+          />
+        </Link>
+      </Box>
+
+      {/* CSS Animations */}
+      <style>
+        {`
+          @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+          }
+
+          @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+          }
+        `}
+      </style>
     </Box>
   );
 }
-
