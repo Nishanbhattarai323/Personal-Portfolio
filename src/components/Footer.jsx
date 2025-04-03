@@ -47,7 +47,7 @@ const Footer = () => {
                 animation: "glowingText 1.5s infinite alternate", // Glow animation
               }}
             >
-              Feel Free to Connect Me
+         Let's Get Connected
             </Typography>
             <Divider sx={{ width: "50%", mx: "auto", my: 1 }} />
             <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
