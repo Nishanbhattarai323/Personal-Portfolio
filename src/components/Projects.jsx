@@ -77,8 +77,8 @@ export default function Projects() {
         "A responsive portfolio website built with React and Tailwind CSS to showcase projects and skills.",
       image:
         "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&h=500",
-      tags: ["React", "Tailwind CSS", "Framer Motion"],
-      github: "#",
+      tags: ["React", "Tailwind CSS","Mui Component"],
+      github: "https://github.com/Nishanbhattarai323/Personal-Portfolio",
       demo: "#",
       category: "react",
     },
@@ -94,6 +94,7 @@ export default function Projects() {
       demo: "#",
       category: "ai",
     },
+    
   ];
 
   const filteredProjects =
