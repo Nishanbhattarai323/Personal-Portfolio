@@ -220,43 +220,43 @@ export default function Home() {
       </Container>
 
       <Box
-        sx={{
-          position: "absolute",
-          bottom: "20px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          cursor: "pointer",
-          animation: "bounce 2s infinite", // Default animation
-        }}
-        className="bounce-arrow" // Apply a class to control the bounce effect
-      >
-        <Link to="about" smooth={true} duration={800}>
-          <ArrowDown
-            size={40}
-            style={{
-              color: rainbowColors[colorIndex],
-              transition: "color 0.3s ease-in-out",
-            }}
-          />
-        </Link>
-      </Box>
+  sx={{
+    position: "absolute",
+    bottom: "20px",
+    left: "50%",
+    transform: "translateX(-50%)",
+    cursor: "pointer",
+  }}
+  className="bounce-arrow" // Apply a class to control the bounce effect
+>
+  <Link to="about" smooth={true} duration={800}>
+    <ArrowDown
+      size={40}
+      style={{
+        color: rainbowColors[colorIndex],
+        transition: "color 0.3s ease-in-out",
+      }}
+    />
+  </Link>
+</Box>
 
-      {/* CSS Animations */}
-      <style>
-        {`
+{/* CSS Animations */}
+<style>
+  {`
     @keyframes bounce {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(10px); }
     }
 
-    /* Disable bounce animation on screens smaller than 960px (xs & sm) */
+    /* Apply bounce animation by default */
     .bounce-arrow {
       animation: bounce 2s infinite;
     }
 
+    /* Disable bounce animation and hide the button for small screens (xs & sm) */
     @media (max-width: 960px) {
       .bounce-arrow {
-        animation: none; /* Disable animation for small screens */
+        display: none; /* Hide the bounce button for small screens */
       }
     }
 
@@ -266,7 +266,8 @@ export default function Home() {
       100% { background-position: 0% 50%; }
     }
   `}
-      </style>
+</style>
+
     </Box>
   );
 }
