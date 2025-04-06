@@ -100,7 +100,7 @@ export default function Home() {
               }}
             >
               <img
-                src="src/assets/photo.jpg"
+                src="/photo.jpg"
                 alt="Profile"
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />
