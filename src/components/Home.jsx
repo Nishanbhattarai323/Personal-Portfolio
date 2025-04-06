@@ -78,7 +78,7 @@ export default function Home() {
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
             alignItems: "center",
-            gap: 4,
+            gap: { xs: 6, md: 4 },
           }}
         >
           {/* Profile Image */}
@@ -86,13 +86,14 @@ export default function Home() {
             sx={{
               width: { xs: "100%", md: "50%" },
               display: "flex",
-              justifyContent: { xs: "center", md: "flex-start" },
+              justifyContent: "center",
+              mb: { xs: 2, md: 0 },
             }}
           >
             <Box
               sx={{
-                width: 250,
-                height: 300,
+                width: { xs: 200, sm: 250 },
+                height: { xs: 240, sm: 300 },
                 overflow: "hidden",
                 border: "4px solid",
                 borderColor: "primary.main",
@@ -140,6 +141,7 @@ export default function Home() {
                 fontSize: { xs: "1.5rem", sm: "2rem" },
                 minHeight: "2.5rem",
                 display: "flex",
+                justifyContent: { xs: "center", md: "flex-start" },
               }}
             >
               <span
@@ -219,55 +221,53 @@ export default function Home() {
         </Box>
       </Container>
 
+      {/* Bouncing Arrow */}
       <Box
-  sx={{
-    position: "absolute",
-    bottom: "20px",
-    left: "50%",
-    transform: "translateX(-50%)",
-    cursor: "pointer",
-  }}
-  className="bounce-arrow" // Apply a class to control the bounce effect
->
-  <Link to="about" smooth={true} duration={800}>
-    <ArrowDown
-      size={40}
-      style={{
-        color: rainbowColors[colorIndex],
-        transition: "color 0.3s ease-in-out",
-      }}
-    />
-  </Link>
-</Box>
+        sx={{
+          position: "absolute",
+          bottom: "20px",
+          left: "50%",
+          transform: "translateX(-50%)",
+          cursor: "pointer",
+        }}
+        className="bounce-arrow"
+      >
+        <Link to="about" smooth={true} duration={800}>
+          <ArrowDown
+            size={40}
+            style={{
+              color: rainbowColors[colorIndex],
+              transition: "color 0.3s ease-in-out",
+            }}
+          />
+        </Link>
+      </Box>
 
-{/* CSS Animations */}
-<style>
-  {`
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(10px); }
-    }
+      {/* CSS Animations */}
+      <style>
+        {`
+          @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+          }
 
-    /* Apply bounce animation by default */
-    .bounce-arrow {
-      animation: bounce 2s infinite;
-    }
+          .bounce-arrow {
+            animation: bounce 2s infinite;
+          }
 
-    /* Disable bounce animation and hide the button for small screens (xs & sm) */
-    @media (max-width: 960px) {
-      .bounce-arrow {
-        display: none; /* Hide the bounce button for small screens */
-      }
-    }
+          @media (max-width: 960px) {
+            .bounce-arrow {
+              display: none;
+            }
+          }
 
-    @keyframes rainbow {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-  `}
-</style>
-
+          @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+          }
+        `}
+      </style>
     </Box>
   );
 }
