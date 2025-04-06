@@ -195,7 +195,7 @@ export default function Home() {
                   px: 4,
                   py: 1.5,
                 }}
-                href="/resume.pdf"
+                href="/cv(nishan).pdf"
                 download
               >
                 Download Resume 📄
@@ -219,7 +219,6 @@ export default function Home() {
         </Box>
       </Container>
 
-      {/* Scroll Down Arrow */}
       <Box
         sx={{
           position: "absolute",
@@ -227,8 +226,9 @@ export default function Home() {
           left: "50%",
           transform: "translateX(-50%)",
           cursor: "pointer",
-          animation: "bounce 2s infinite",
+          animation: "bounce 2s infinite", // Default animation
         }}
+        className="bounce-arrow" // Apply a class to control the bounce effect
       >
         <Link to="about" smooth={true} duration={800}>
           <ArrowDown
@@ -244,17 +244,28 @@ export default function Home() {
       {/* CSS Animations */}
       <style>
         {`
-          @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(10px); }
-          }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(10px); }
+    }
 
-          @keyframes rainbow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-          }
-        `}
+    /* Disable bounce animation on screens smaller than 960px (xs & sm) */
+    .bounce-arrow {
+      animation: bounce 2s infinite;
+    }
+
+    @media (max-width: 960px) {
+      .bounce-arrow {
+        animation: none; /* Disable animation for small screens */
+      }
+    }
+
+    @keyframes rainbow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  `}
       </style>
     </Box>
   );
