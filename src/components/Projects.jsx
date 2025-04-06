@@ -79,7 +79,7 @@ export default function Projects() {
         "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&h=500",
       tags: ["React", "Tailwind CSS","Mui Component"],
       github: "https://github.com/Nishanbhattarai323/Personal-Portfolio",
-      demo: "#",
+     demo:"https://nishanbhattarai-portfolio.vercel.app/",
       category: "react",
     },
     {
@@ -91,7 +91,7 @@ export default function Projects() {
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&h=500",
       tags: ["Python", "TensorFlow", "React"],
       github: "#",
-      demo: "#",
+    
       category: "ai",
     },
     
