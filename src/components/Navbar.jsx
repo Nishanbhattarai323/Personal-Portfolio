@@ -22,8 +22,8 @@ const Navbar = () => {
     "Home",
     "About",
     "Education",
-    "Projects",
     "Skills",
+    "Projects",
     "Contact",
   ];
   const [scrolled, setScrolled] = useState(false);

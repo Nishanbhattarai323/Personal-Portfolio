@@ -9,7 +9,6 @@ export default function Home() {
     "React.js Developer",
     "Software Engineer",
     "AI Enthusiast",
-    "Full Stack Developer",
   ];
 
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
